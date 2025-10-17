@@ -21,7 +21,7 @@ try:
 except FileNotFoundError:
     print("❌ File not found. Please check the dataset path.")
 except Exception as e:
-    print(f"⚠️ Error loading dataset: {e}")
+    print(f" Error loading dataset: {e}")
 else:
     # Display first few rows
     print("🔹 First five rows of the dataset:")
@@ -42,12 +42,12 @@ else:
 # Task 2: Basic Data Analysis
 
 # Descriptive statistics
-print("\n📊 Basic Statistics:")
+print("\n Basic Statistics:")
 print(df.describe())
 
 # Group by species and compute mean of numeric columns
 grouped_means = df.groupby("species").mean(numeric_only=True)
-print("\n📈 Mean values by Species:")
+print("\n Mean values by Species:")
 print(grouped_means)
 
 # Identify simple pattern
