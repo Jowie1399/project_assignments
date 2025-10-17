@@ -4,7 +4,6 @@
 -visualize this data for insights and seaborn
 '''
 
-
 # Importing libraries
 import pandas as pd
 import matplotlib.pyplot as plt
