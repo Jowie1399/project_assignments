@@ -1,0 +1,41 @@
+#chatgpt was used
+def modify_text(text):
+    """
+    Simple function to modify text.
+    You can change this logic (uppercase, lowercase, add lines, etc.)
+    """
+    return text.upper()  # Example: Convert everything to uppercase
+
+
+def read_and_write_file():
+    try:
+        # Ask the user for the filename
+        filename = input("Enter the name of the file to read: ")
+
+        # Try to open and read the file
+        with open(filename, "r") as file:
+            content = file.read()
+
+        # Modify the content
+        modified_content = modify_text(content)
+
+        # Define a new filename
+        new_filename = f"modified_{filename}"
+
+        # Write the modified content to the new file
+        with open(new_filename, "w") as new_file:
+            new_file.write(modified_content)
+
+        print(f"✅ File successfully modified and saved as '{new_filename}'")
+
+    except FileNotFoundError:
+        print("❌ Error: The file you entered does not exist.")
+    except PermissionError:
+        print("❌ Error: You don’t have permission to read this file.")
+    except Exception as e:
+        print(f"⚠️ Unexpected error occurred: {e}")
+
+
+# --- Main Program ---
+if __name__ == "__main__":
+    read_and_write_file()
